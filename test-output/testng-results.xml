@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testng-results total="1" passed="1" failed="0" skipped="0">
+  <reporter-output>
+  </reporter-output>
+  <suite started-at="2022-08-07T00:24:46Z" name="Default suite" finished-at="2022-08-07T00:24:56Z" duration-ms="9819">
+    <groups>
+    </groups>
+    <test started-at="2022-08-07T00:24:46Z" name="Default test" finished-at="2022-08-07T00:24:56Z" duration-ms="9819">
+      <class name="com.qa.salesforce.pages.UserMenuPage">
+        <test-method is-config="true" signature="setUp()[pri:0, instance:com.qa.salesforce.pages.UserMenuPage@1984b1f]" started-at="2022-08-06T20:24:46Z" name="setUp" finished-at="2022-08-06T20:24:52Z" duration-ms="5709" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- setUp -->
+        <test-method is-config="true" signature="login()[pri:0, instance:com.qa.salesforce.pages.UserMenuPage@1984b1f]" started-at="2022-08-06T20:24:52Z" name="login" finished-at="2022-08-06T20:24:53Z" duration-ms="1441" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- login -->
+        <test-method signature="testCase5()[pri:0, instance:com.qa.salesforce.pages.UserMenuPage@1984b1f]" started-at="2022-08-06T20:24:53Z" name="testCase5" finished-at="2022-08-06T20:24:56Z" duration-ms="2476" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- testCase5 -->
+        <test-method is-config="true" signature="tearDown()[pri:0, instance:com.qa.salesforce.pages.UserMenuPage@1984b1f]" started-at="2022-08-06T20:24:56Z" name="tearDown" finished-at="2022-08-06T20:24:56Z" duration-ms="177" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- tearDown -->
+      </class> <!-- com.qa.salesforce.pages.UserMenuPage -->
+    </test> <!-- Default test -->
+  </suite> <!-- Default suite -->
+</testng-results>
