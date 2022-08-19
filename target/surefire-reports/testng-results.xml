@@ -1,0 +1,73 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testng-results skipped="0" failed="0" ignored="0" total="5" passed="5">
+  <reporter-output>
+  </reporter-output>
+  <suite name="SalesForce Test Regression Suite" duration-ms="42972" started-at="2022-08-11T18:41:17Z" finished-at="2022-08-11T18:42:00Z">
+    <groups>
+    </groups>
+    <test name="sales force Login Page Test" duration-ms="42972" started-at="2022-08-11T18:41:17Z" finished-at="2022-08-11T18:42:00Z">
+      <class name="com.qa.salesforce.test.LoginPageTest">
+        <test-method status="PASS" signature="setUp()[pri:0, instance:com.qa.salesforce.test.LoginPageTest@773c0293]" name="setUp" is-config="true" duration-ms="10331" started-at="2022-08-11T18:41:17Z" finished-at="2022-08-11T18:41:27Z">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- setUp -->
+        <test-method status="PASS" signature="testCase1()[pri:0, instance:com.qa.salesforce.test.LoginPageTest@773c0293]" name="testCase1" duration-ms="1188" started-at="2022-08-11T18:41:27Z" finished-at="2022-08-11T18:41:29Z">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- testCase1 -->
+        <test-method status="PASS" signature="tearDown()[pri:0, instance:com.qa.salesforce.test.LoginPageTest@773c0293]" name="tearDown" is-config="true" duration-ms="1391" started-at="2022-08-11T18:41:29Z" finished-at="2022-08-11T18:41:30Z">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- tearDown -->
+        <test-method status="PASS" signature="setUp()[pri:0, instance:com.qa.salesforce.test.LoginPageTest@773c0293]" name="setUp" is-config="true" duration-ms="4465" started-at="2022-08-11T18:41:30Z" finished-at="2022-08-11T18:41:35Z">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- setUp -->
+        <test-method status="PASS" signature="testCase2()[pri:0, instance:com.qa.salesforce.test.LoginPageTest@773c0293]" name="testCase2" duration-ms="4667" started-at="2022-08-11T18:41:35Z" finished-at="2022-08-11T18:41:39Z">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- testCase2 -->
+        <test-method status="PASS" signature="tearDown()[pri:0, instance:com.qa.salesforce.test.LoginPageTest@773c0293]" name="tearDown" is-config="true" duration-ms="1367" started-at="2022-08-11T18:41:39Z" finished-at="2022-08-11T18:41:41Z">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- tearDown -->
+        <test-method status="PASS" signature="setUp()[pri:0, instance:com.qa.salesforce.test.LoginPageTest@773c0293]" name="setUp" is-config="true" duration-ms="4601" started-at="2022-08-11T18:41:41Z" finished-at="2022-08-11T18:41:45Z">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- setUp -->
+        <test-method status="PASS" signature="testCase3()[pri:0, instance:com.qa.salesforce.test.LoginPageTest@773c0293]" name="testCase3" duration-ms="4032" started-at="2022-08-11T18:41:45Z" finished-at="2022-08-11T18:41:49Z">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- testCase3 -->
+        <test-method status="PASS" signature="tearDown()[pri:0, instance:com.qa.salesforce.test.LoginPageTest@773c0293]" name="tearDown" is-config="true" duration-ms="508" started-at="2022-08-11T18:41:49Z" finished-at="2022-08-11T18:41:50Z">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- tearDown -->
+        <test-method status="PASS" signature="setUp()[pri:0, instance:com.qa.salesforce.test.LoginPageTest@773c0293]" name="setUp" is-config="true" duration-ms="4803" started-at="2022-08-11T18:41:50Z" finished-at="2022-08-11T18:41:55Z">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- setUp -->
+        <test-method status="PASS" signature="testCase4A()[pri:0, instance:com.qa.salesforce.test.LoginPageTest@773c0293]" name="testCase4A" duration-ms="595" started-at="2022-08-11T18:41:55Z" finished-at="2022-08-11T18:41:55Z">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- testCase4A -->
+        <test-method status="PASS" signature="tearDown()[pri:0, instance:com.qa.salesforce.test.LoginPageTest@773c0293]" name="tearDown" is-config="true" duration-ms="38" started-at="2022-08-11T18:41:55Z" finished-at="2022-08-11T18:41:55Z">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- tearDown -->
+        <test-method status="PASS" signature="setUp()[pri:0, instance:com.qa.salesforce.test.LoginPageTest@773c0293]" name="setUp" is-config="true" duration-ms="4036" started-at="2022-08-11T18:41:55Z" finished-at="2022-08-11T18:41:59Z">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- setUp -->
+        <test-method status="PASS" signature="testCase4B()[pri:0, instance:com.qa.salesforce.test.LoginPageTest@773c0293]" name="testCase4B" duration-ms="378" started-at="2022-08-11T18:41:59Z" finished-at="2022-08-11T18:42:00Z">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- testCase4B -->
+        <test-method status="PASS" signature="tearDown()[pri:0, instance:com.qa.salesforce.test.LoginPageTest@773c0293]" name="tearDown" is-config="true" duration-ms="291" started-at="2022-08-11T18:42:00Z" finished-at="2022-08-11T18:42:00Z">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- tearDown -->
+      </class> <!-- com.qa.salesforce.test.LoginPageTest -->
+    </test> <!-- sales force Login Page Test -->
+  </suite> <!-- SalesForce Test Regression Suite -->
+</testng-results>

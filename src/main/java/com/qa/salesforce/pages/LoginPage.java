@@ -1,14 +1,16 @@
 package com.qa.salesforce.pages;
 
+import org.apache.log4j.Logger;
+/**
+ * @author Divya
+ * this page is to store all the By locators and page actions of LoginPage
+ */
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
-import org.openqa.selenium.chrome.ChromeDriver;
-import org.testng.Assert;
-import org.testng.annotations.AfterMethod;
-import org.testng.annotations.BeforeMethod;
-import org.testng.annotations.BeforeTest;
-import org.testng.annotations.Test;
+import org.openqa.selenium.support.FindBy;
+import org.openqa.selenium.support.PageFactory;
+
 
 import com.qa.salesforce.utilities.ElementUtil;
 
@@ -17,111 +19,169 @@ import io.github.bonigarcia.wdm.WebDriverManager;
 public class LoginPage {
 	WebDriver driver;
 	ElementUtil eleUtil;
+	public static Logger log=Logger.getLogger(LoginPage.class);
+	
 	By userName = By.id("username");
 	By passWord = By.id("password");
 	By loginbtn = By.id("Login");
-	By rememberMe=By.id("rememberUn");
-	By userMenu=By.id("userNavLabel");
-	By logout=By.xpath("//a[text()='Logout']");
-	By forgotPassword=By.id("forgot_password_link");
+	By rememberMe = By.id("rememberUn");
+	By userMenu = By.id("userNavLabel");
+	By logout = By.xpath("//a[text()='Logout']");
+	By forgotPassword = By.id("forgot_password_link");
 	
-	@BeforeMethod
-	public void setup() {
-		WebDriverManager.chromedriver().setup();
-		driver = new ChromeDriver();
-		driver.manage().window().maximize();
-		driver.get("https://login.salesforce.com/");
+//	@FindBy(id="username")
+//	public By userName  ;
+//	
+//	@FindBy(id="password")
+//	public By passWord ;
+//	
+//	@FindBy(id="Login")
+//	public By loginbtn   ;
+//	
+//	@FindBy(id="rememberUn")
+//	public By rememberMe ;
+//	
+//	@FindBy(id="userNavLabel")
+//	public By userMenu  ;
+//	
+//	@FindBy(xpath="//a[text()='Logout']")
+//	public By logout  ;
+//	
+//	@FindBy(id="forgot_password_link")
+//	public By forgotPassword  ;
+//
+	/*
+	 * loginPage constructor is to initialize driver of the page
+	 * @param WebDriver
+	 */
 
+	public LoginPage(WebDriver driver) {
+		this.driver = driver;
 		eleUtil = new ElementUtil(driver);
 
 	}
+//	
 
-	@Test(enabled=true)
-	public void testCase2() {
-
-		eleUtil.doSendKeys(userName, "lelladivya26@gmail.com");
-		eleUtil.doSendKeys(passWord, "test@123");
-		eleUtil.doClick(loginbtn);
-		String actualTitle=eleUtil.waitForTitleContains("Salesforce", 10);
-		String ExpectedTitle="Home Page ~ Salesforce - Developer Edition";
-		Assert.assertTrue(actualTitle.contains(ExpectedTitle));
+	// testcase 1
+	/*
+	 * this method is to open the webpage based on the Url.
+	 * @param String url, String expectedTitle
+	 * @return this method returns boolean
+	 */
+	public boolean getWebPage(String url,String expectedTitle) {
+		driver.get(url);
+		String actualTitle=driver.getTitle();
+		if(actualTitle.equals(expectedTitle)) {
+			return true;
+		}
+		else {
+			return false;
+		}
+		
 	}
 
-	@Test(enabled=true)
-	public void testCase1() {
+	public String getUserNameValue(String userNameValue) {
 		WebElement userNameele = eleUtil.getElement(userName);
-		WebElement passwordEle=eleUtil.getElement(passWord);
-		WebElement loginBtnEle=eleUtil.getElement(loginbtn);
-		
-		String expectedUserName = "User@gmail.com";
 
-		userNameele.sendKeys("User@gmail.com");
+		userNameele.sendKeys(userNameValue);
 		String actualUserName = userNameele.getAttribute("value");
-		System.out.println(actualUserName);
-		// String actualUserName=eleUtil.doGetElementAttribute(userName,"value");
-		Assert.assertEquals(actualUserName, expectedUserName);
-		
-		passwordEle.clear();
-		String actualpassword=passwordEle.getAttribute("value");
-		String expectedPassword="";
-		Assert.assertEquals(actualpassword, expectedPassword);
-		loginBtnEle.click();
-		
-		WebElement errormsg=driver.findElement(By.id("error"));
-		String actualError=errormsg.getText();
-		String expectedError="Please enter your password.";
-		Assert.assertTrue( expectedError.contains(actualError));
+		//System.out.println(actualUserName);
+		return actualUserName;
+
 	}
-	@Test(enabled=true)
-	public void testCase3() {
-		eleUtil.doSendKeys(userName, "lelladivya26@gmail.com");
-		eleUtil.doSendKeys(passWord, "test@123");
-		WebElement rememberMeEle=eleUtil.getElement(rememberMe);
+	public String getPasswordValueWithText(String passwordValue) {
+		WebElement passwordele = eleUtil.getElement(passWord);
+
+		passwordele.sendKeys(passwordValue);
+		String actualPassword = passwordele.getAttribute("value");
+		//System.out.println(actualUserName);
+		return actualPassword;
+
+	}
+
+	public String getPasswordValueWithoutText() {
+
+		WebElement passwordEle = eleUtil.getElement(passWord);
+		passwordEle.clear();
+		String actualpassword = passwordEle.getAttribute("value");
+		return actualpassword;
+	}
+
+	public String getErrorMsg() {
+		WebElement loginBtnEle = eleUtil.getElement(loginbtn);
+		loginBtnEle.click();
+
+		WebElement errormsg = eleUtil.waitForElementVisible(By.id("error"),10);
+		String actualErrorMsg = errormsg.getText();
+		return actualErrorMsg;
+
+	}
+	// test case2
+
+	public String doGetLoggedIn(String userNameValue, String passwordValue) {
+
+		eleUtil.doSendKeys(userName, userNameValue);
+		eleUtil.doSendKeys(passWord, passwordValue);
+		eleUtil.doClick(loginbtn);
+		String actualTitle = eleUtil.waitForTitleContains("Salesforce", 10);
+		return actualTitle;
+	}
+	//testcase 3:
+	
+
+	public String getLoggedInWithRemember(String userNameValue, String passwordValue) {
+		eleUtil.doSendKeys(userName, userNameValue);
+		eleUtil.doSendKeys(passWord, passwordValue);
+		WebElement rememberMeEle = eleUtil.getElement(rememberMe);
 		rememberMeEle.click();
 		eleUtil.doClick(loginbtn);
-		String actualTitle=eleUtil.waitForTitleContains("Salesforce", 10);
-		Assert.assertTrue(actualTitle.contains("Salesforce"));
-		
+		String actualTitle = eleUtil.waitForTitleContains("Salesforce", 10);
+		return actualTitle;
+	}
+
+	public String doClickOnlogOut() {
 		eleUtil.doClick(userMenu);
 		eleUtil.doClick(logout);
-		String actualtitle=eleUtil.waitForTitleContains("Login", 10);
-		String ExpectedTitle="Login | Salesforce";
-		Assert.assertEquals(actualtitle, ExpectedTitle);	
-		String expectedUserName="lelladivya26@gmail.com";
-		String actualUserName=eleUtil.doGetElementAttribute(userName, "value");
-		Assert.assertEquals(actualUserName, expectedUserName);
+		String actualtitle = eleUtil.waitForTitleContains("Login", 10);
+		return actualtitle;
 		
 	}
-	@Test(enabled=true)
-	public void testCase4A() {
+
+	public String getUserNameAttributeValue() {
+		String actualUserName = eleUtil.doGetElementAttribute(userName, "value");
+		return actualUserName;
+
+	}
+	// testcase 4a:
+
+	public String getForgotPasswordTitle() {
 		eleUtil.doClick(forgotPassword);
-		String actualTitle=eleUtil.waitForTitleContains("Forgot", 0);
-		String expectedTitle="Forgot Your Password | Salesforce";
-		Assert.assertEquals(actualTitle, expectedTitle);
-		By userNameFP=By.id("un");
-		By continuebtn=By.id("continue");
-		eleUtil.doSendKeys(userNameFP, "lelladivya26@gmail.com");
-		eleUtil.doClick(continuebtn);
-		String actualResetPageTitle=eleUtil.waitForTitleContains("Email", 10);
-		String expectedResetPageTitle="Check Your Email | Salesforce";
-		Assert.assertTrue(expectedResetPageTitle.contains(actualResetPageTitle));
-	}
-	@Test
-	public void testCase4B() {
-		eleUtil.doSendKeys(userName, "123");
-		eleUtil.doSendKeys(passWord, "22131");
-		eleUtil.doClick(loginbtn);
-		By errorMsg=By.id("error");
+		String actualTitle = eleUtil.waitForTitleContains("Forgot", 0);
+		return actualTitle;
 		
-		WebElement errorMsgEle=eleUtil.waitForElementVisible(errorMsg, 10);
-		String actualErrorMsg=errorMsgEle.getText();
-		String expectedErrorMsg="Please check your username and password. If you still can't log in, contact your Salesforce administrator.";
-		Assert.assertEquals(actualErrorMsg, expectedErrorMsg);
 	}
-	
-	@AfterMethod
-	public void tearDown() {
-		driver.close();
+
+	public boolean verifyResetPage(String userNameValue, String expectedResetPageTitle) {
+
+		By userNameFP = By.id("un");
+		By continuebtn = By.id("continue");
+		eleUtil.doSendKeys(userNameFP, userNameValue);
+		eleUtil.doClick(continuebtn);
+		String actualResetPageTitle = eleUtil.waitForTitleContains("Email", 10);
+
+		if (expectedResetPageTitle.contains(actualResetPageTitle)) {
+			return true;
+		} else {
+			return false;
+		}
 	}
-	
+	//logins the user:
+	public void doLogin() {
+
+		eleUtil.doSendKeys(userName, "lelladivya26@gmail.com");
+		eleUtil.doSendKeys(passWord, "test@123");
+		eleUtil.doClick(loginbtn);
+	}
+
+
 }

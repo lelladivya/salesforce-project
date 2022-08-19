@@ -1,0 +1,7 @@
+com\qa\salesforce\factory\DriverFactory.class
+com\qa\salesforce\factory\OptionsManager.class
+com\qa\salesforce\utilities\JavaScriptUtil.class
+com\qa\salesforce\utilities\ElementUtil.class
+com\qa\salesforce\pages\LoginPage.class
+com\qa\salesforce\listeners\ExtentReportListener.class
+com\qa\salesforce\pages\UserMenuPage.class

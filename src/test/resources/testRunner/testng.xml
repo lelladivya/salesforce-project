@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
+
+<suite name="SalesForce Test Regression Suite" verbose="4" thread-count="4" parallel="tests">
+	<listeners>
+		<listener class-name="com.qa.salesforce.listeners.ExtentReportListener" />
+
+	</listeners>
+	<test name="sales force Login Page Test">
+		<classes>
+			<class name="com.qa.salesforce.test.LoginPageTest" />
+		</classes>
+
+	</test>
+
+	<!-- <test name="sales force UserMenu Page Test">
+		<classes>
+			<class name="com.qa.salesforce.test.UserMenuTests" />
+		</classes>
+
+	</test>-->
+
+</suite>
