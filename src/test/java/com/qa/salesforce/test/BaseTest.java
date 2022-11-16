@@ -11,7 +11,11 @@ import org.testng.annotations.BeforeTest;
 
 import com.qa.salesforce.pages.AccountPage;
 import com.qa.salesforce.pages.BasePage;
+import com.qa.salesforce.pages.ContactsPage;
+import com.qa.salesforce.pages.LeadsPage;
 import com.qa.salesforce.pages.LoginPage;
+import com.qa.salesforce.pages.OpportunitiesPage;
+import com.qa.salesforce.pages.RandomScenariosPage;
 import com.qa.salesforce.pages.UserMenuPage;
 
 public class BaseTest {
@@ -20,7 +24,11 @@ public class BaseTest {
 	BasePage bp;
 	UserMenuPage userMenuPage;
 	AccountPage accountPage;
+	OpportunitiesPage opportunitiesPage;
+	LeadsPage leadsPage;
 	Properties prop;
+	ContactsPage contactsPage;
+RandomScenariosPage randomScenariosPage;
 
 	@BeforeMethod
 	public void setUp() {
@@ -28,6 +36,10 @@ public class BaseTest {
 		prop = bp.init_Properties();
 		driver = bp.init_Driver(prop);
 		loginPage = new LoginPage(driver);
+		opportunitiesPage=new OpportunitiesPage(driver);
+		leadsPage=new LeadsPage(driver);
+		contactsPage=new ContactsPage(driver);
+		randomScenariosPage=new RandomScenariosPage(driver);
 //		userMenuPage = new UserMenuPage(driver);
 //	accountPage=new AccountPage(driver);
 		// Assert.assertTrue(loginPage.getWebPage("https://login.salesforce.com/",

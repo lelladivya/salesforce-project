@@ -1,18 +1,16 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
-<suite thread-count="4" guice-stage="DEVELOPMENT" verbose="4" name="Failed suite [SalesForce Test Regression Suite]" parallel="tests">
-  <listeners>
-    <listener class-name="com.qa.salesforce.listeners.ExtentReportListener"/>
-  </listeners>
-  <test thread-count="4" verbose="4" name="sales force Login Page Test(failed)" parallel="tests">
+<suite guice-stage="DEVELOPMENT" name="Failed suite [Default suite]">
+  <test thread-count="5" name="Default test(failed)">
     <classes>
-      <class name="com.qa.salesforce.test.LoginPageTest">
+      <class name="com.qa.salesforce.test.RandomScenariosPageTest">
         <methods>
           <include name="setUp"/>
-          <include name="testCase2"/>
           <include name="tearDown"/>
+          <include name="testCase34"/>
+          <include name="loginToSalesforceAppTest"/>
         </methods>
-      </class> <!-- com.qa.salesforce.test.LoginPageTest -->
+      </class> <!-- com.qa.salesforce.test.RandomScenariosPageTest -->
     </classes>
-  </test> <!-- sales force Login Page Test(failed) -->
-</suite> <!-- Failed suite [SalesForce Test Regression Suite] -->
+  </test> <!-- Default test(failed) -->
+</suite> <!-- Failed suite [Default suite] -->

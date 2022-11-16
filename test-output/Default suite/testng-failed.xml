@@ -3,13 +3,14 @@
 <suite guice-stage="DEVELOPMENT" name="Failed suite [Default suite]">
   <test thread-count="5" name="Default test(failed)">
     <classes>
-      <class name="com.qa.salesforce.test.LoginPageTest">
+      <class name="com.qa.salesforce.test.RandomScenariosPageTest">
         <methods>
           <include name="setUp"/>
-          <include name="testCase2"/>
           <include name="tearDown"/>
+          <include name="testCase34"/>
+          <include name="loginToSalesforceAppTest"/>
         </methods>
-      </class> <!-- com.qa.salesforce.test.LoginPageTest -->
+      </class> <!-- com.qa.salesforce.test.RandomScenariosPageTest -->
     </classes>
   </test> <!-- Default test(failed) -->
 </suite> <!-- Failed suite [Default suite] -->
